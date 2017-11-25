@@ -179,7 +179,7 @@ int main(int argc, char** argv)
                 // Flip the image if necessary
                 if (flip_image)
                     cv::flip(frame, frame, flip_value);
-                msg = cv_bridge::CvImage(header, "bgr8", frame).toImageMsg();
+                msg = cv_bridge::CvImage(header, "rgb8", frame).toImageMsg();
                 // Create a default camera info if we didn't get a stored one on initialization
                 if (cam_info_msg.distortion_model == ""){
                     ROS_WARN_STREAM("No calibration file given, publishing a reasonable default camera info.");
